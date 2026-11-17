@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de calificaciones</title>
+    <!--Hacemos referencia a los estilos de mi pagina-->
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .form-cal {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .form-cal label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        .form-cal input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-cal button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .form-cal button:hover {
+            background-color: #555;
+        }
+        #resultado {
+            margin-top: 15px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+        #resultado h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 16px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        #resultado p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header><img src="fondo.jpg"></header>
+    
+    <nav>    
+        <ul>
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="#">Conoceme</a>
+                <ul>
+                    <li><a href="informacion.html">Informacion personal</a></li>
+                    <li><a href="pasatiempos.html">Pasatiempos</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Segunda Parcial</a>
+                <ul>
+                    <li><a href="practica1.html">Práctica uno</a></li>
+                    <li><a href="posiciones.html">Práctica de posiciones</a></li>
+                    <li><a href="mundodigital.html">Mi mundo digital</a></li>
+                    <li><a href="comunidad.html">Comunidad</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tercera Parcial</a>
+                <ul>
+                    <li><a href="calificaciones.html">Sistema de calificaciones</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <aside class="principal">
+            <h2>Sistema de evaluación de calificaciones</h2>
+            <p>Utiliza el formulario para calcular el promedio y el estado del alumno.</p>
+            
+            <div class="form-cal">
+                <div>
+                    <label for="nombre">Nombre del estudiante:</label>
+                    <input type="text" id="nombre" placeholder="Nombre completo">
+                </div>
+                <div>
+                    <label for="cal1">Primera calificación (0 a 10):</label>
+                    <input type="number" id="cal1" step="0.1" min="0" max="10">
+                </div>
+                <div>
+                    <label for="cal2">Segunda calificación (0 a 10):</label>
+                    <input type="number" id="cal2" step="0.1" min="0" max="10">
+                </div>
+                <div>
+                    <label for="cal3">Tercera calificación (0 a 10):</label>
+                    <input type="number" id="cal3" step="0.1" min="0" max="10">
+                </div>
+                <button id="btnCalcular">Calcular promedio</button>
+            </div>
+
+            <div id="resultado">
+                <h3>Resultado de la Evaluación</h3>
+                <p id="resNombre"></p>
+                <p id="resCalificaciones"></p>
+                <p id="resPromedio"></p>
+                <p id="resEstado"></p>
+                <p id="resObservacion"></p>
+            </div>
+        </aside>
+        
+        <aside class="secundario"> 
+            <h3>Instrucciones</h3>
+            <p>1. Ingresa el nombre del alumno.</p>
+            <p>2. Digita las 3 calificaciones (0 a 10).</p>
+            <p>3. Da clic en calcular para ver el promedio y la observación.</p>
+        </aside>
+    </section>
+
+    <footer>
+        <img src="logobachi.png">
+        <div>
+            <p><strong>Universidad de Colima</strong></p>
+            <p>Bachillerato 8</p>
+            <p>Programacion en Internet I</p>
+        </div>
+    </footer>
+
+    <script src="calificaciones.js"></script>
+</body>
+</html>
